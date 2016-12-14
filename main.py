@@ -26,23 +26,23 @@ while n < 10000:
 					event = 'ArrowLeft'
 				prev_event = event
 
-				# Combining events does not work well for me.. :(
-				action_n = [[('KeyEvent', 'ArrowUp', True)] for ob in observation_n]
-				env.step([[('KeyEvent', event, True)] for ob in observation_n])
-				#action_n = [[('KeyEvent', 'ArrowUp', True), ('KeyEvent', event, True)] for ob in observation_n]
+				# Combining events does not work well for me.. :(. I tried my logic by playing the game
+				# myself, but I have no idea how to combine the keys so that it keeps driving and turns.
+				action_n = [[('KeyEvent', 'ArrowUp', True), ('KeyEvent', event, True)] for ob in observation_n]
 				turn = False
 	else:
 		# If no turn is needed, go straight
 		action_n = [[('KeyEvent', 'ArrowUp', True)] for ob in observation_n]
 
+	print(action_n)
 	observation_n, reward_n, done_n, info = env.step(action_n)
 
 	#for every 15 iterations, sum total observations if lower then change direction
 	if((j >= 15) and (observation_n[0] != None)):
 		j = 0
-		if((prev_total_sum > total_sum) and turn == False):
+		if((prev_total_sum >= total_sum)):
 			turn = True
-		elif((prev_total_sum > total_sum) and turn == True):
+		else:
 			turn = False
 
 		prev_total_sum = total_sum

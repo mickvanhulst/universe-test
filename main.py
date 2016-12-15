@@ -15,7 +15,6 @@ def determine_turn(turn, observation_n, j, total_sum, prev_total_sum, reward_n):
 
 		prev_total_sum = total_sum
 		total_sum = 0
-
 	else:
 		turn = False
 	
@@ -27,7 +26,6 @@ def determine_turn(turn, observation_n, j, total_sum, prev_total_sum, reward_n):
 
 
 def main():
-
 	# Init environment
 	env = gym.make('flashgames.CoasterRacer-v0')
 	observation_n = env.reset()

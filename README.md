@@ -10,6 +10,5 @@ To proof that this bot is better than the original bot, you'll have to run it un
 to the first turn. This bot is actually able to finish a lap, while the original wasn't able
 to get through the first turn.
 
-
 # Sirajology
 Thanks @[Sirajology](https://www.youtube.com/watch?v=mGYU5t8MO7s&t=2s) for the great videos.

@@ -5,6 +5,11 @@ This was part of the challenge of one of Sirajology's videos. We had to try and 
 
 Would have loved to play around with the bot more, but I had other obligations and I wanted to deliver something before the end of the contest.
 
+# Proof
+To proof that this bot is better than the original bot, you'll have to run it until it makes it
+to the first turn. This bot is actually able to finish a lap, while the original wasn't able
+to get through the first turn.
+
 
 # Sirajology
 Thanks @[Sirajology](https://www.youtube.com/watch?v=mGYU5t8MO7s&t=2s) for the great videos.

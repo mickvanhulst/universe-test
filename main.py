@@ -3,18 +3,20 @@ import universe
 import random
 
 def determine_turn(turn, observation_n, j, total_sum, prev_total_sum, reward_n):
-	# For every 15 iterations, sum total observations if lower then change direction
+	# For every 15 iterations, sum total observations and take average. If lower than 0, change direction
 	# This makes it more accurate since the iterations are very fast.
-	# j is sixty since we run at 60 fps. I know this is not exactly right, but
-	# I reckon this would be a nice implementation if we assume that 60 loops equals
-	# 60 fps. 
-	if(j >= 60):
-		j = 0
-		if((prev_total_sum >= total_sum)):
+	if(j >= 15):
+		
+		if((total_sum / j) == 0):
 			turn = True
-
+		else:
+			turn = False
+		
+		total_sum = 0
+		j = 0
 		prev_total_sum = total_sum
 		total_sum = 0
+	
 	else:
 		turn = False
 	
@@ -22,6 +24,7 @@ def determine_turn(turn, observation_n, j, total_sum, prev_total_sum, reward_n):
 		j+=1
 		total_sum += reward_n
 	print(j)
+
 	return(turn, j, total_sum, prev_total_sum)
 
 
@@ -56,7 +59,7 @@ def main():
 					event = random.choice([left, right])
 					action_n = [event for ob in observation_n]
 					turn = False
-		else:
+		elif(~turn):
 			# If no turn is needed, go straight
 			action_n = [forward for ob in observation_n]
 

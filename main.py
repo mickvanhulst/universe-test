@@ -5,7 +5,10 @@ import random
 def determine_turn(turn, observation_n, j, total_sum, prev_total_sum, reward_n):
 	# For every 15 iterations, sum total observations if lower then change direction
 	# This makes it more accurate since the iterations are very fast.
-	if(j >= 20):
+	# j is sixty since we run at 60 fps. I know this is not exactly right, but
+	# I reckon this would be a nice implementation if we assume that 60 loops equals
+	# 60 fps. 
+	if(j >= 60):
 		j = 0
 		if((prev_total_sum >= total_sum)):
 			turn = True

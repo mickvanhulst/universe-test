@@ -7,4 +7,4 @@ Would have loved to play around with the bot more, but I had other obligations a
 
 
 # Sirajology
-Thanks @(Sirajology)[https://www.youtube.com/watch?v=mGYU5t8MO7s&t=2s] for the great videos.
+Thanks @[Sirajology](https://www.youtube.com/watch?v=mGYU5t8MO7s&t=2s) for the great videos.
